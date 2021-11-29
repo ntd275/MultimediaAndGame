@@ -92,11 +92,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
         if (!canJump)
         {
             Instantiate(AfterJump, transform.position, Quaternion.identity);
         }
-        if (collision.gameObject.tag == "Ground")
+        var tag = collision.gameObject.tag;
+        if (tag == "Ground" || tag == "Spike")
         {
             canJump = true;
         }

@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 677e931b0eeb45b4cb93d09830da314c
+guid: d5ce1c5f0717891459fbae2d99e425ec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8085032188382512298
-    second: coin_pickup_anim_strip_6_0
+      213: 7675826601332790545
+    second: coin_0
   - first:
-      213: -679227021632654480
-    second: coin_pickup_anim_strip_6_1
+      213: -675104096977794455
+    second: coin_1
   - first:
-      213: 2364531806408166509
-    second: coin_pickup_anim_strip_6_2
+      213: -4412926668834298731
+    second: coin_2
   - first:
-      213: -4911090849469897614
-    second: coin_pickup_anim_strip_6_3
+      213: -4862007459847594908
+    second: coin_3
   - first:
-      213: -219306034624907966
-    second: coin_pickup_anim_strip_6_4
+      213: -7914957615168794202
+    second: coin_4
   - first:
-      213: -9102122322208075028
-    second: coin_pickup_anim_strip_6_5
+      213: 2278881825021241808
+    second: coin_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,7 +50,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coin_pickup_anim_strip_6_0
+      name: coin_0
       rect:
         serializedVersion: 2
         x: 0
@@ -123,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65b7cdd9f023ccf80800000000000000
-      internalID: -8085032188382512298
+      spriteID: 1155fe920a3068a60800000000000000
+      internalID: 7675826601332790545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_pickup_anim_strip_6_1
+      name: coin_1
       rect:
         serializedVersion: 2
         x: 8
@@ -144,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0733dbd5f96e296f0800000000000000
-      internalID: -679227021632654480
+      spriteID: 96a4a31966c81a6f0800000000000000
+      internalID: -675104096977794455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_pickup_anim_strip_6_2
+      name: coin_2
       rect:
         serializedVersion: 2
         x: 16
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6c421d662180d020800000000000000
-      internalID: 2364531806408166509
+      spriteID: 594a84c439222c2c0800000000000000
+      internalID: -4412926668834298731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_pickup_anim_strip_6_3
+      name: coin_3
       rect:
         serializedVersion: 2
         x: 24
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 274eca974ec48dbb0800000000000000
-      internalID: -4911090849469897614
+      spriteID: 46c1c7ca9fda68cb0800000000000000
+      internalID: -4862007459847594908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_pickup_anim_strip_6_4
+      name: coin_4
       rect:
         serializedVersion: 2
         x: 32
@@ -207,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 245351dc25ed4fcf0800000000000000
-      internalID: -219306034624907966
+      spriteID: 6a15797fbfb682290800000000000000
+      internalID: -7914957615168794202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: coin_pickup_anim_strip_6_5
+      name: coin_5
       rect:
         serializedVersion: 2
         x: 40
@@ -228,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce252aa19f3cea180800000000000000
-      internalID: -9102122322208075028
+      spriteID: 0d92c7122f630af10800000000000000
+      internalID: 2278881825021241808
       vertices: []
       indices: 
       edges: []

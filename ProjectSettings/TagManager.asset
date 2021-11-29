@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Stone
   - Button
+  - Coin
+  - Spike
   layers:
   - Default
   - TransparentFX

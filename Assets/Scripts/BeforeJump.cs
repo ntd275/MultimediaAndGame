@@ -10,10 +10,4 @@ public class BeforeJump : MonoBehaviour
     {
         Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
