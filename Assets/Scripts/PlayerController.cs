@@ -169,6 +169,7 @@ public class PlayerController : MonoBehaviour
         //Dash
         if (dash)
         {
+            rb.velocity = new Vector2(0, rb.velocity.y);
             float tagetDashSpeed =  DashSpeed;
             if(!isFacingRight)
             {
