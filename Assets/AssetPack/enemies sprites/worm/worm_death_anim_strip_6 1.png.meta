@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 055e6dcf72cc7c0419885c78a62cf06c
+guid: 568185ced44115c4b87e80e65d8b4014
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6660691273581345480
-    second: worm_hit_anim_strip_3_0
+      213: -5402840941208647422
+    second: worm_death_anim_strip_6_0
   - first:
-      213: 7996805600415874357
-    second: worm_hit_anim_strip_3_1
+      213: -4832351847404317560
+    second: worm_death_anim_strip_6_1
   - first:
-      213: 4007792685299390262
-    second: worm_hit_anim_strip_3_2
+      213: 7806809425713480484
+    second: worm_death_anim_strip_6_2
+  - first:
+      213: 7648674588614591385
+    second: worm_death_anim_strip_6_3
+  - first:
+      213: 5756995212167482429
+    second: worm_death_anim_strip_6_4
+  - first:
+      213: -3009001676846640839
+    second: worm_death_anim_strip_6_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: worm_hit_anim_strip_3_0
+      name: worm_death_anim_strip_6_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 835c3a793987093a0800000000000000
-      internalID: -6660691273581345480
+      spriteID: 20942591ac04505b0800000000000000
+      internalID: -5402840941208647422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: worm_hit_anim_strip_3_1
+      name: worm_death_anim_strip_6_1
       rect:
         serializedVersion: 2
         x: 16
@@ -135,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53d74ae135c5afe60800000000000000
-      internalID: 7996805600415874357
+      spriteID: 88453c1099900fcb0800000000000000
+      internalID: -4832351847404317560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: worm_hit_anim_strip_3_2
+      name: worm_death_anim_strip_6_2
       rect:
         serializedVersion: 2
         x: 32
@@ -156,8 +165,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 637ddac863a8e9730800000000000000
-      internalID: 4007792685299390262
+      spriteID: 423c2d87fcb575c60800000000000000
+      internalID: 7806809425713480484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worm_death_anim_strip_6_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9930ee0930d852a60800000000000000
+      internalID: 7648674588614591385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worm_death_anim_strip_6_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c0ed2c4a4f4ef40800000000000000
+      internalID: 5756995212167482429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worm_death_anim_strip_6_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9315003dae0ed36d0800000000000000
+      internalID: -3009001676846640839
       vertices: []
       indices: 
       edges: []
