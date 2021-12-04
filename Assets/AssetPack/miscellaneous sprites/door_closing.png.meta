@@ -1,46 +1,46 @@
 fileFormatVersion: 2
-guid: 9d84ec6ae3884154394ec71893c7baf8
+guid: 20cc78c1f35dc624c9db72f02d5eb06d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 347451276584246300
-    second: strange_door_opening_anim_strip_14_0
+      213: 6281401971115634657
+    second: door_closing_0
   - first:
-      213: -4249389619412451124
-    second: strange_door_opening_anim_strip_14_1
+      213: -7428038260960680949
+    second: door_closing_1
   - first:
-      213: 6938579174742508395
-    second: strange_door_opening_anim_strip_14_2
+      213: -5781960490195662639
+    second: door_closing_2
   - first:
-      213: -2650451347613823636
-    second: strange_door_opening_anim_strip_14_3
+      213: -4998662231155600788
+    second: door_closing_3
   - first:
-      213: -5287527108188383539
-    second: strange_door_opening_anim_strip_14_4
+      213: 8710327571259223286
+    second: door_closing_4
   - first:
-      213: 1496916291704373965
-    second: strange_door_opening_anim_strip_14_5
+      213: -3941883749262817960
+    second: door_closing_5
   - first:
-      213: -302128725182431008
-    second: strange_door_opening_anim_strip_14_6
+      213: -3874862828680678952
+    second: door_closing_6
   - first:
-      213: 4300021848910839685
-    second: strange_door_opening_anim_strip_14_7
+      213: -4124568611695627031
+    second: door_closing_7
   - first:
-      213: 6099008848845824659
-    second: strange_door_opening_anim_strip_14_8
+      213: -4700846618113102131
+    second: door_closing_8
   - first:
-      213: -391202845247089702
-    second: strange_door_opening_anim_strip_14_9
+      213: 5020767729509913957
+    second: door_closing_9
   - first:
-      213: 4334372896824091752
-    second: strange_door_opening_anim_strip_14_10
+      213: 2763505555394492806
+    second: door_closing_10
   - first:
-      213: -6197634539926759144
-    second: strange_door_opening_anim_strip_14_11
+      213: 3605832110366943734
+    second: door_closing_11
   - first:
-      213: -8140173966147065108
-    second: strange_door_opening_anim_strip_14_12
+      213: -7197460286354524966
+    second: door_closing_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,28 +130,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1c5f8d581562d400800000000000000
-      internalID: 347451276584246300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_1
+      name: door_closing_0
       rect:
         serializedVersion: 2
         x: 16
@@ -165,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc040b6c7a22705c0800000000000000
-      internalID: -4249389619412451124
+      spriteID: 1ef29cbffc50c2750800000000000000
+      internalID: 6281401971115634657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_2
+      name: door_closing_1
       rect:
         serializedVersion: 2
         x: 32
@@ -186,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b63437c4ff8ca4060800000000000000
-      internalID: 6938579174742508395
+      spriteID: b04ad6d9e8e4ae890800000000000000
+      internalID: -7428038260960680949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_3
+      name: door_closing_2
       rect:
         serializedVersion: 2
         x: 48
@@ -207,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6dc503ca84b73bd0800000000000000
-      internalID: -2650451347613823636
+      spriteID: 1d84b8c719952cfa0800000000000000
+      internalID: -5781960490195662639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_4
+      name: door_closing_3
       rect:
         serializedVersion: 2
         x: 64
@@ -228,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc6de201c1eee96b0800000000000000
-      internalID: -5287527108188383539
+      spriteID: c621fcf4f2f21aab0800000000000000
+      internalID: -4998662231155600788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_5
+      name: door_closing_4
       rect:
         serializedVersion: 2
         x: 80
@@ -249,14 +228,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc2c881bf6d16c410800000000000000
-      internalID: 1496916291704373965
+      spriteID: 6fc623ad6cc41e870800000000000000
+      internalID: 8710327571259223286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_6
+      name: door_closing_5
       rect:
         serializedVersion: 2
         x: 96
@@ -270,14 +249,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e04f03768f9ecbf0800000000000000
-      internalID: -302128725182431008
+      spriteID: 8550e437d9d9b49c0800000000000000
+      internalID: -3941883749262817960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_7
+      name: door_closing_6
       rect:
         serializedVersion: 2
         x: 112
@@ -291,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58fbfbec61fbcab30800000000000000
-      internalID: 4300021848910839685
+      spriteID: 8d17f1789c8b93ac0800000000000000
+      internalID: -3874862828680678952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_8
+      name: door_closing_7
       rect:
         serializedVersion: 2
         x: 128
@@ -312,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3926b6deb3804a450800000000000000
-      internalID: 6099008848845824659
+      spriteID: 9e4f72853b692c6c0800000000000000
+      internalID: -4124568611695627031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_9
+      name: door_closing_8
       rect:
         serializedVersion: 2
         x: 144
@@ -333,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad3dcedb51b229af0800000000000000
-      internalID: -391202845247089702
+      spriteID: dcea5cf28ec33ceb0800000000000000
+      internalID: -4700846618113102131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_10
+      name: door_closing_9
       rect:
         serializedVersion: 2
         x: 160
@@ -354,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 864e7476f29c62c30800000000000000
-      internalID: 4334372896824091752
+      spriteID: 565de2916a95da540800000000000000
+      internalID: 5020767729509913957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_11
+      name: door_closing_10
       rect:
         serializedVersion: 2
         x: 176
@@ -375,14 +354,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81959ffe8349df9a0800000000000000
-      internalID: -6197634539926759144
+      spriteID: 6897b1439a1f95620800000000000000
+      internalID: 2763505555394492806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strange_door_opening_anim_strip_14_12
+      name: door_closing_11
       rect:
         serializedVersion: 2
         x: 192
@@ -396,8 +375,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceaebe108ea480f80800000000000000
-      internalID: -8140173966147065108
+      spriteID: 6f96e1a233d7a0230800000000000000
+      internalID: 3605832110366943734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: door_closing_12
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad47bdad00c7d1c90800000000000000
+      internalID: -7197460286354524966
       vertices: []
       indices: 
       edges: []

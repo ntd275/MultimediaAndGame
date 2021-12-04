@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public GameObject BeforeJump;
     public GameObject groundCheck;
+    public LayerMask StoneLayer;
+    public BoxCollider2D bc;
+    public LayerMask GroundLayer;
 
     public float MoveSpeed = 1000;
     public float GroundAccelerationRate;
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        bc = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -76,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Ground check
-        if (groundCheck.GetComponent<GroundCheck>().isGround)
+        if (IsGround())
         {
             lastGroundedTime = now;
         }
@@ -91,9 +95,8 @@ public class PlayerController : MonoBehaviour
             jump = true;
         }
 
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("Speed", Mathf.Abs(moveInput.x));
         animator.SetFloat("VelocityY", rb.velocity.y);
-
 
         if (dashInput > 0.01f && now > nextTimeCanDash)
         {
@@ -179,6 +182,47 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(speedDiff * Vector2.right,ForceMode2D.Impulse);
             dash = false;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Stone")
+        {
+            var front = Physics2D.Raycast(bc.bounds.center, isFacingRight ? Vector2.right : Vector2.left, bc.bounds.extents.x + 0.1f, StoneLayer);
+            //Debug.DrawRay(box.bounds.center, (isFacingRight ? Vector2.right : Vector2.left)*(box.bounds.extents.x + 0.1f), Color.green,10);
+            if(front.collider != null)
+            {
+                animator.SetBool("Push", true);
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Stone")
+        {
+            animator.SetBool("Push", false);
+        }
+    }
+
+    private bool IsGround()
+    {
+        var bottomMiddle = Physics2D.Raycast(bc.bounds.center, Vector2.down, bc.bounds.extents.y + 0.1f, GroundLayer);
+        if(bottomMiddle.collider != null)
+        {
+            return true;
+        }
+        var bottomLeft = Physics2D.Raycast(new Vector2(bc.bounds.center.x - bc.bounds.extents.x,bc.bounds.center.y), Vector2.down, bc.bounds.extents.y + 0.1f, GroundLayer);
+        if (bottomLeft.collider != null)
+        {
+            return true;
+        }
+        var bottomRight = Physics2D.Raycast(new Vector2(bc.bounds.center.x + bc.bounds.extents.x, bc.bounds.center.y), Vector2.down, bc.bounds.extents.y + 0.1f, GroundLayer);
+        if (bottomRight.collider != null)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void Turn()
