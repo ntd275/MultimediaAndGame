@@ -21,7 +21,8 @@ public class PlayerCombat : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if((EnemyLayer.value & (1 << collision.gameObject.layer)) > 0 && Time.time > immortalTime){
             Health -= 1;
@@ -37,7 +38,7 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if ((EnemyLayer.value & (1 << collision.gameObject.layer)) > 0 && Time.time > immortalTime)
         {

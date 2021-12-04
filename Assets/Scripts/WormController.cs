@@ -28,6 +28,7 @@ public class WormController : MonoBehaviour
             animator.SetTrigger("hit");
             isDead = true;
             V = 0;
+            gameObject.layer = 6;
             Destroy(gameObject, 1f);
         }
 
