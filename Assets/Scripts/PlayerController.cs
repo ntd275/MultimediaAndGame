@@ -4,50 +4,106 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float Speed = 1000;
-    public Rigidbody2D rg;
+    public Rigidbody2D rb;
     public Animator animator;
-    public float JumpForce = 600;
     public GameObject BeforeJump;
-    public GameObject AfterJump;
-    public float DashSpeed = 8000;
-    public float DashDuration = 0.5f;
+    public GameObject groundCheck;
+
+    public float MoveSpeed = 1000;
+    public float GroundAccelerationRate;
+    public float GroundDecelerationRate;
+    public float AirAccelerationRate;
+    public float AirDecelerationRate;
+    public float VelocityPower;
+    public float Friction;
+
+    public float JumpCoyoteTime = 0.1f;
+    public float JumpForce;
+    public float JumpCutMultiple;
+    public float GravityScale = 1;
+    public float GravityFall = 3;
+
+    public float DashSpeed = 50;
     public float DashCoolDown = 1;
+    public float AfterImageTime = 0.5f;
     public float AfterImageCoolDown = 0.1f;
 
-    private float xMove = 0;
-    private bool lookRight = true;
-    private bool jump = false;
-    private bool canJump = true;
+    private Vector2 moveInput;
+    private Vector2 lastMoveInput;
+    private bool isFacingRight = true;
 
-    private float dashTime = 0;
+    private float jumpInput;
+    private float lastGroundedTime = 0;
+    private bool jump = false;
+    private bool isJumpingUp = false;
+
+    private float dashInput;
+    private bool dash = false;
+    private float beginDash = 0;
     private float nextTimeCanDash = 0;
     private float nextTimePrintAfterImage = 0;
     private float now;
     void Start()
     {
-        rg = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        xMove = Input.GetAxisRaw("Horizontal") * Speed;
-        if (Input.GetButtonDown("Jump") && canJump){
+        now = Time.time;
+        //Input
+        moveInput.x = Input.GetAxisRaw("Horizontal");
+        moveInput.y = Input.GetAxisRaw("Vertical");
+        jumpInput = Input.GetAxisRaw("Jump");
+        dashInput = Input.GetAxisRaw("Dash");
+
+        //Turn
+        if (moveInput.x != 0)
+        {
+            lastMoveInput.x = moveInput.x;
+        }
+
+        if(moveInput.y != 0)
+        {
+            lastMoveInput.y = moveInput.y;
+        }
+
+        if( (lastMoveInput.x > 0 && !isFacingRight) || (lastMoveInput.x < 0 && isFacingRight))
+        {
+            Turn();
+        }
+
+        //Ground check
+        if (groundCheck.GetComponent<GroundCheck>().isGround)
+        {
+            lastGroundedTime = now;
+        }
+
+        if (rb.velocity.y <= 0)
+        {
+            isJumpingUp = false; 
+        }
+
+        if (jumpInput > 0.01f && lastGroundedTime + JumpCoyoteTime > now && !isJumpingUp)
+        {
             jump = true;
         }
-        animator.SetFloat("Speed", Mathf.Abs(xMove));
-        animator.SetFloat("VelocityY", rg.velocity.y);
-        now = Time.time;
-        if (Input.GetButtonDown("Dash") && now > nextTimeCanDash)
+
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("VelocityY", rb.velocity.y);
+
+
+        if (dashInput > 0.01f && now > nextTimeCanDash)
         {
-            dashTime = now + DashDuration;
-            nextTimeCanDash = dashTime + DashCoolDown;
+            dash = true;
+            beginDash = now;
+            nextTimeCanDash = now + DashCoolDown;
             animator.SetTrigger("Dash");
         }
 
-        if (now < dashTime && now > nextTimePrintAfterImage)
+        if (beginDash + AfterImageTime > now && now > nextTimePrintAfterImage)
         {
             nextTimePrintAfterImage = now + AfterImageCoolDown;
             GameObject trailPart = new GameObject();
@@ -61,56 +117,74 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if((xMove > 0 && !lookRight) || (xMove <0 && lookRight))
+        //Move
+        float targetSpeed = moveInput.x * MoveSpeed;
+        float speedDif = targetSpeed - rb.velocity.x;
+        float accelRate;
+        if(lastGroundedTime + JumpCoyoteTime > now)
         {
-            Flip();
+            //Grounded
+            accelRate = Mathf.Abs(targetSpeed) > 0.01 ? GroundAccelerationRate : GroundDecelerationRate;
         }
-        rg.velocity = new Vector2(xMove * Time.fixedDeltaTime, rg.velocity.y);
-
-        if(jump)
+        else
         {
-            rg.AddForce(new Vector2(0, JumpForce));
-            jump = false;
-            canJump = false;
+            accelRate = Mathf.Abs(targetSpeed) > 0.01 ? AirAccelerationRate : AirDecelerationRate;
+        }
+        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, VelocityPower) * Mathf.Sign(speedDif);
+        rb.AddForce(movement * Vector2.right);
+
+        //Friction
+        if (lastGroundedTime + JumpCoyoteTime > now && !isJumpingUp && Mathf.Abs(moveInput.x) < 0.01f)
+        {
+            float amount = Mathf.Min(Mathf.Abs(rb.velocity.x), Mathf.Abs(Friction)) * Mathf.Sign(rb.velocity.x);
+            rb.AddForce(Vector2.right * -amount, ForceMode2D.Impulse);
+        }
+
+        //Jump
+        if (jump)
+        {
+            rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             Instantiate(BeforeJump, transform.position, Quaternion.identity);
-
+            jump = false;
+            isJumpingUp = true;
         }
 
-        now = Time.time;
-        if (now < dashTime)
+        //JumpCut
+        if(jumpInput < 0.01f && isJumpingUp)
         {
-            if (lookRight)
+            rb.AddForce(Vector2.down * rb.velocity.y * (1 - JumpCutMultiple), ForceMode2D.Impulse);
+        }
+
+        //Jump Gravity
+
+        if (rb.velocity.y <= 0 && lastGroundedTime + JumpCoyoteTime <= now)
+        {
+            rb.gravityScale = GravityFall;
+        }
+        else
+        {
+            rb.gravityScale = GravityScale;
+        }
+
+        //Dash
+        if (dash)
+        {
+            float tagetDashSpeed =  DashSpeed;
+            if(!isFacingRight)
             {
-                rg.velocity = new Vector2(DashSpeed * Time.fixedDeltaTime, rg.velocity.y);
+                tagetDashSpeed = -tagetDashSpeed;
             }
-            else
-            {
-                rg.velocity = new Vector2(-DashSpeed * Time.fixedDeltaTime, rg.velocity.y);
-            }
+            float speedDiff = tagetDashSpeed - rb.velocity.x;
+            rb.AddForce(speedDiff * Vector2.right,ForceMode2D.Impulse);
+            dash = false;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Turn()
     {
-        Debug.Log(collision.gameObject.tag);
-        if (!canJump)
-        {
-            Instantiate(AfterJump, transform.position, Quaternion.identity);
-        }
-        var tag = collision.gameObject.tag;
-        if (tag == "Ground" || tag == "Spike")
-        {
-            canJump = true;
-        }
-    }
-
-    private void Flip()
-    {
-        lookRight = !lookRight;
+        isFacingRight = !isFacingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-
 }
