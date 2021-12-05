@@ -462,7 +462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.010000238, y: 1.73, z: -10}
+  m_LocalPosition: {x: 0.010000477, y: 1.73, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1705,7 +1705,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.01492691, y: -0.014927626}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1716,7 +1716,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6666667, y: 0.6666667}
+  m_Size: {x: 0.397974, y: 0.3979745}
   m_EdgeRadius: 0
 --- !u!114 &548581686
 MonoBehaviour:
@@ -1731,15 +1731,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  bc: {fileID: 0}
+  bc: {fileID: 548581685}
   animator: {fileID: 0}
   LimitX: 2
   V: 2
-  attackSpeed: 6
-  goBackSpeed: 7
+  attackSpeed: 7
+  goBackSpeed: 6
   attackWait: 2
   needAttack: 0
   attackTarget: {x: 0, y: 0}
+  LimitAttackTime: 12
+  LimitAttackDistance: 16
 --- !u!50 &548581687
 Rigidbody2D:
   serializedVersion: 4
@@ -1908,7 +1910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936051114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.010000238, y: 1.73, z: -10}
+  m_LocalPosition: {x: 0.010000477, y: 1.73, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 818612462}
@@ -2064,8 +2066,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614add68e0da429429bd8c03fe1dac04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &1970097619
-CircleCollider2D:
+--- !u!61 &1970097619
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2077,9 +2079,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.014928341, y: -0.13434577}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 4
+  m_Size: {x: 11.538714, y: 4.970678}
+  m_EdgeRadius: 0
 --- !u!1001 &4959929011201500367
 PrefabInstance:
   m_ObjectHideFlags: 0
