@@ -154,7 +154,7 @@ MonoBehaviour:
   attackWait: 2
   needAttack: 0
   attackTarget: {x: 0, y: 0}
-  LimitAttackTime: 12
+  LimitAttackTime: 6
   LimitAttackDistance: 16
 --- !u!50 &5065110151026552407
 Rigidbody2D:
