@@ -10,6 +10,7 @@ public class CoinController : MonoBehaviour
         {
             var animator = gameObject.GetComponent<Animator>();
             animator.Play("Coin_Pick");
+            gameObject.GetComponent<AudioSource>().Play();
             Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
         }
     }

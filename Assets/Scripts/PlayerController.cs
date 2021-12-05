@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public GameObject BeforeJump;
-    public GameObject groundCheck;
+    public GameObject AfterJump;
     public LayerMask StoneLayer;
     public BoxCollider2D bc;
     public LayerMask GroundLayer;
+    public AudioSource JumpSound;
+    public AudioSource RunSound;
 
     public float MoveSpeed = 1000;
     public float GroundAccelerationRate;
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 lastMoveInput;
     private bool isFacingRight = true;
+    private float runSoundPlayTime = 0;
 
     private float jumpInput;
     private float lastGroundedTime = 0;
@@ -135,6 +138,11 @@ public class PlayerController : MonoBehaviour
         }
         float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, VelocityPower) * Mathf.Sign(speedDif);
         rb.AddForce(movement * Vector2.right);
+        if(moveInput.x >= 0.01f && now > runSoundPlayTime)
+        {
+            runSoundPlayTime = now + 0.3f;
+            //RunSound.Play();
+        }
 
         //Friction
         if (lastGroundedTime + JumpCoyoteTime > now && !isJumpingUp && Mathf.Abs(moveInput.x) < 0.01f)
@@ -148,6 +156,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             Instantiate(BeforeJump, transform.position, Quaternion.identity);
+            JumpSound.Play();
             jump = false;
             isJumpingUp = true;
         }
@@ -186,7 +195,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Stone")
+        Instantiate(AfterJump, transform.position, Quaternion.identity);
+        if (collision.gameObject.tag == "Stone")
         {
             var front = Physics2D.Raycast(bc.bounds.center, isFacingRight ? Vector2.right : Vector2.left, bc.bounds.extents.x + 0.1f, StoneLayer);
             //Debug.DrawRay(box.bounds.center, (isFacingRight ? Vector2.right : Vector2.left)*(box.bounds.extents.x + 0.1f), Color.green,10);
