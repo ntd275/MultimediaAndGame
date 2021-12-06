@@ -7449,10 +7449,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 776156530199134914, guid: 8e6243fc9a0ca58428acb028c72f5994, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2683658580013666706, guid: 8e6243fc9a0ca58428acb028c72f5994, type: 3}
       propertyPath: m_RootOrder
       value: 5

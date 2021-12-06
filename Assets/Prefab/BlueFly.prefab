@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 5065110151026552405}
   - component: {fileID: 5065110151026552406}
   - component: {fileID: 5065110151026552407}
-  m_Layer: 0
+  - component: {fileID: 834540160700356882}
+  m_Layer: 8
   m_Name: BlueFly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,6 +178,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &834540160700356882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5065110151026552401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5614a8a2d6be73544af6c403fab02866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Heath: 1
+  animator: {fileID: 0}
 --- !u!1 &5065110152331809456
 GameObject:
   m_ObjectHideFlags: 0
