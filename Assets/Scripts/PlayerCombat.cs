@@ -10,11 +10,14 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
     public LayerMask CanTakeDamage;
     public LayerMask EnemyLayer;
+    public LayerMask SwitchLayer;
     public float ImortalDuration = 1;
     public Transform AttackPoint;
     public float AttackRange = 1;
     public float AttackRate = 2;
     public AudioSource AttackSound;
+    public AudioSource HitSound;
+    public AudioSource DieSound;
 
     private float immortalTime = 0;
     private float attackInput = 0;
@@ -47,6 +50,11 @@ public class PlayerCombat : MonoBehaviour
         {
             enemy.GetComponent<EnemyHit>().Hit(1);
         }
+        var hitSwitch = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, SwitchLayer);
+        foreach (var s in hitSwitch)
+        {
+            s.GetComponent<SwitchController>().IsOn = !s.GetComponent<SwitchController>().IsOn;
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -60,11 +68,13 @@ public class PlayerCombat : MonoBehaviour
             Health -= 1;
             immortalTime = Time.time + ImortalDuration;
             animator.SetTrigger("Hit");
+            HitSound.Play();
             if (Health <= 0)
             {
                 GetComponent<PlayerController>().enabled = false;
                 enabled = false;
                 animator.SetBool("Dead", true);
+                DieSound.Play();
                 StartCoroutine(Restart(1));
             }
         }
@@ -77,11 +87,13 @@ public class PlayerCombat : MonoBehaviour
             Health -= 1;
             immortalTime = Time.time + ImortalDuration;
             animator.SetTrigger("Hit");
+            HitSound.Play();
             if (Health <= 0)
             {
                 GetComponent<PlayerController>().enabled = false;
                 enabled = false;
                 animator.SetBool("Dead", true);
+                DieSound.Play();
                 StartCoroutine(Restart(1));
             }
         }
