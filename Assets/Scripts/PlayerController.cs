@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask GroundLayer;
     public AudioSource JumpSound;
     public AudioSource RunSound;
+    public AudioSource DashSound;
 
     public float MoveSpeed = 1000;
     public float GroundAccelerationRate;
@@ -189,6 +190,7 @@ public class PlayerController : MonoBehaviour
             }
             float speedDiff = tagetDashSpeed - rb.velocity.x;
             rb.AddForce(speedDiff * Vector2.right,ForceMode2D.Impulse);
+            DashSound.Play();
             dash = false;
         }
     }

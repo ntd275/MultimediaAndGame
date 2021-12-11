@@ -14,6 +14,7 @@ public class PlayerCombat : MonoBehaviour
     public Transform AttackPoint;
     public float AttackRange = 1;
     public float AttackRate = 2;
+    public AudioSource AttackSound;
 
     private float immortalTime = 0;
     private float attackInput = 0;
@@ -31,6 +32,7 @@ public class PlayerCombat : MonoBehaviour
         attackInput = Input.GetAxisRaw("Attack");
         if(attackInput >= 0.1 && now > nextAttackTime)
         {
+            AttackSound.Play();
             nextAttackTime = now + 1f / AttackRate;
             Attack();
         }

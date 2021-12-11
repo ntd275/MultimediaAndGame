@@ -30,4 +30,14 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(name);
     }
+
+    public void ContinuePlay()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetString("Level"));
+    }
+
+    public void SetContiueLevel(string name)
+    {
+        PlayerPrefs.SetString("Level", name);
+    }
 }

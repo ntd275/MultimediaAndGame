@@ -10,6 +10,7 @@ public class FinishLv1 : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            PlayerPrefs.SetString("Level", "");
             SceneManager.LoadScene("Lobby");
         }
     }
