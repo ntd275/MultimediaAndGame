@@ -10,7 +10,7 @@ public class FinishLv1 : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("Lobby");
         }
     }
 }
