@@ -1,0 +1,312 @@
+fileFormatVersion: 2
+guid: 729fd9227cd93d74cade1cf2c208b6d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7184453141422777021
+    second: On (32x10)_0
+  - first:
+      213: -478649534418853393
+    second: On (32x10)_1
+  - first:
+      213: -3554031824873935288
+    second: On (32x10)_2
+  - first:
+      213: -5902476256046710882
+    second: On (32x10)_3
+  - first:
+      213: 2210439805566933078
+    second: On (32x10)_4
+  - first:
+      213: -2006925892272077409
+    second: On (32x10)_5
+  - first:
+      213: 2802294208090272295
+    second: On (32x10)_6
+  - first:
+      213: -1120285975722262333
+    second: On (32x10)_7
+  - first:
+      213: -3796441018068628408
+    second: On (32x10)_8
+  - first:
+      213: 9222335326754197865
+    second: On (32x10)_9
+  - first:
+      213: 3247164278607208898
+    second: On (32x10)_10
+  - first:
+      213: -6551659279998898665
+    second: On (32x10)_11
+  - first:
+      213: -7661706840295596329
+    second: On (32x10)_12
+  - first:
+      213: 368488783801992898
+    second: On (32x10)_13
+  - first:
+      213: -2012470849192189914
+    second: On (32x10)_14
+  - first:
+      213: -6188908415419170970
+    second: On (32x10)_15
+  - first:
+      213: -3464806729171376931
+    second: On (32x10)_16
+  - first:
+      213: 6466114568315337282
+    second: On (32x10)_17
+  - first:
+      213: 3975905977173759870
+    second: On (32x10)_18
+  - first:
+      213: 331178560346006272
+    second: On (32x10)_19
+  - first:
+      213: -1528932620110813652
+    second: On (32x10)_20
+  - first:
+      213: 8255595742850750853
+    second: On (32x10)_21
+  - first:
+      213: -5288941406586390980
+    second: On (32x10)_22
+  - first:
+      213: 7247429009142962682
+    second: On (32x10)_23
+  - first:
+      213: -4173217361597096884
+    second: On (32x10)_24
+  - first:
+      213: 3091812965731395106
+    second: On (32x10)_25
+  - first:
+      213: 476857772279102192
+    second: On (32x10)_26
+  - first:
+      213: -8026726954397410219
+    second: On (32x10)_27
+  - first:
+      213: 2362029544461681469
+    second: On (32x10)_28
+  - first:
+      213: 5556101239260895375
+    second: On (32x10)_29
+  - first:
+      213: -1823171181824821068
+    second: On (32x10)_30
+  - first:
+      213: -2158387744984195464
+    second: On (32x10)_31
+  - first:
+      213: 8482321408242332153
+    second: On (32x10)_32
+  - first:
+      213: -1070913778322494586
+    second: On (32x10)_33
+  - first:
+      213: 6062801518607479987
+    second: On (32x10)_34
+  - first:
+      213: 3164917025932772980
+    second: On (32x10)_35
+  - first:
+      213: -6258991751222084003
+    second: On (32x10)_36
+  - first:
+      213: -334717176836156612
+    second: On (32x10)_37
+  - first:
+      213: -6887242448077430972
+    second: On (32x10)_38
+  - first:
+      213: -8820168540109813173
+    second: On (32x10)_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: On (32x10)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d5e08cee1bb4c90800000000000000
+      internalID: -7184453141422777021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: On (32x10)_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1ee01d8ce7b59f0800000000000000
+      internalID: -478649534418853393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: On (32x10)_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ea4f5a2ea8daec0800000000000000
+      internalID: -3554031824873935288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: On (32x10)_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f78272e11361ea0800000000000000
+      internalID: -5902476256046710882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

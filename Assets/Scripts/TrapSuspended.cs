@@ -6,7 +6,7 @@ public class TrapSuspended : MonoBehaviour
 {
     // Start is called before the first frame update
     public float LimitAngle = 60;
-    private Vector3 rotateVector = new Vector3(0, 0, 1);
+    public Vector3 rotateVector = new Vector3(0, 0, 1);
     void Start()
     {
         
