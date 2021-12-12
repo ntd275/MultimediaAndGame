@@ -9,6 +9,7 @@ public class CoinUI : MonoBehaviour
     public Text text;
     private void Start()
     {
+        total = PlayerPrefs.GetInt("Coin");
         text = transform.Find("Text").GetComponent<Text>();
     }
     // Update is called once per frame

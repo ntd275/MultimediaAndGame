@@ -25,6 +25,10 @@ public class PlayerCombat : MonoBehaviour
     private float now = 0;
     void Start()
     {
+        if(PlayerPrefs.GetInt("Health") > 0)
+        {
+            Health = PlayerPrefs.GetInt("Health");
+        }
         animator = GetComponent<Animator>();
     }
 
@@ -65,18 +69,7 @@ public class PlayerCombat : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if((CanTakeDamage.value & (1 << collision.gameObject.layer)) > 0 && Time.time > immortalTime){
-            Health -= 1;
-            immortalTime = Time.time + ImortalDuration;
-            animator.SetTrigger("Hit");
-            HitSound.Play();
-            if (Health <= 0)
-            {
-                GetComponent<PlayerController>().enabled = false;
-                enabled = false;
-                animator.SetBool("Dead", true);
-                DieSound.Play();
-                StartCoroutine(Restart(1));
-            }
+            TakeDame(1);
         }
     }
 
@@ -84,18 +77,23 @@ public class PlayerCombat : MonoBehaviour
     {
         if ((CanTakeDamage.value & (1 << collision.gameObject.layer)) > 0 && Time.time > immortalTime)
         {
-            Health -= 1;
-            immortalTime = Time.time + ImortalDuration;
-            animator.SetTrigger("Hit");
-            HitSound.Play();
-            if (Health <= 0)
-            {
-                GetComponent<PlayerController>().enabled = false;
-                enabled = false;
-                animator.SetBool("Dead", true);
-                DieSound.Play();
-                StartCoroutine(Restart(1));
-            }
+            TakeDame(1);
+        }
+    }
+
+    public void TakeDame(int dame)
+    {
+        Health -= dame;
+        immortalTime = Time.time + ImortalDuration;
+        animator.SetTrigger("Hit");
+        HitSound.Play();
+        if (Health <= 0)
+        {
+            GetComponent<PlayerController>().enabled = false;
+            enabled = false;
+            animator.SetBool("Dead", true);
+            DieSound.Play();
+            StartCoroutine(Restart(1));
         }
     }
 

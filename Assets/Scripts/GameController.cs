@@ -31,6 +31,13 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
+    public void StartGame()
+    {
+        PlayerPrefs.SetInt("Health", 3);
+        PlayerPrefs.SetInt("Coin", 0);
+        SceneManager.LoadScene("Level1");
+    }
+
     public void ContinuePlay()
     {
         SceneManager.LoadScene(PlayerPrefs.GetString("Level"));
