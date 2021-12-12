@@ -19,7 +19,6 @@ public class BlueFlyController : MonoBehaviour
     public float LimitAttackDistance;
 
     private float walked = 0;
-    private bool isDead = false;
     private bool isFacingRight = false;
     private Vector3 center;
     private float nextAttack = 0;
