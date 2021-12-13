@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FinishLv2 : MonoBehaviour
+public class FinishLv : MonoBehaviour
 {
     public AudioSource FinishSound;
+    public string NextLv;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +22,6 @@ public class FinishLv2 : MonoBehaviour
     IEnumerator NextScene(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene(NextLv);
     }
 }
