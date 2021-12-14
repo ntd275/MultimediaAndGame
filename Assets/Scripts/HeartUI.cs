@@ -38,6 +38,7 @@ public class HeartUI : MonoBehaviour
             var health = player.GetComponent<PlayerCombat>().Health;
             if (health != total)
             {
+                total = health;
                 for (int i = 0; i < 3; i++)
                 {
                     if (i < health)

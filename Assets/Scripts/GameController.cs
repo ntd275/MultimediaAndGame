@@ -47,4 +47,9 @@ public class GameController : MonoBehaviour
     {
         PlayerPrefs.SetString("Level", name);
     }
+
+    public void SetContiueLevelCurrent()
+    {
+        PlayerPrefs.SetString("Level", SceneManager.GetActiveScene().name);
+    }
 }
