@@ -2503,7 +2503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FinishSound: {fileID: 658663939}
-  NextLv: Lobby
+  NextLv: Level6
 --- !u!1001 &673189639
 PrefabInstance:
   m_ObjectHideFlags: 0

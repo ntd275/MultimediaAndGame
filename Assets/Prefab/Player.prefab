@@ -434,6 +434,9 @@ MonoBehaviour:
   SwitchLayer:
     serializedVersion: 2
     m_Bits: 1024
+  BossLayer:
+    serializedVersion: 2
+    m_Bits: 4096
   ImortalDuration: 1
   AttackPoint: {fileID: 4886225592436685662}
   AttackRange: 0.5

@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask CanTakeDamage;
     public LayerMask EnemyLayer;
     public LayerMask SwitchLayer;
+    public LayerMask BossLayer;
     public float ImortalDuration = 1;
     public Transform AttackPoint;
     public float AttackRange = 1;
@@ -59,6 +60,12 @@ public class PlayerCombat : MonoBehaviour
         {
             s.GetComponent<SwitchController>().IsOn = !s.GetComponent<SwitchController>().IsOn;
         }
+
+        var hitBoss = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange, BossLayer);
+        foreach (var s in hitBoss)
+        {
+            s.GetComponent<BossCombat>().TakeDame(1);
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -68,14 +75,14 @@ public class PlayerCombat : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if((CanTakeDamage.value & (1 << collision.gameObject.layer)) > 0 && Time.time > immortalTime){
+        if((CanTakeDamage.value & (1 << collision.gameObject.layer)) > 0){
             TakeDame(1);
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if ((CanTakeDamage.value & (1 << collision.gameObject.layer)) > 0 && Time.time > immortalTime)
+        if ((CanTakeDamage.value & (1 << collision.gameObject.layer)) > 0)
         {
             TakeDame(1);
         }
@@ -83,17 +90,20 @@ public class PlayerCombat : MonoBehaviour
 
     public void TakeDame(int dame)
     {
-        Health -= dame;
-        immortalTime = Time.time + ImortalDuration;
-        animator.SetTrigger("Hit");
-        HitSound.Play();
-        if (Health <= 0)
+        if (Time.time > immortalTime)
         {
-            GetComponent<PlayerController>().enabled = false;
-            enabled = false;
-            animator.SetBool("Dead", true);
-            DieSound.Play();
-            StartCoroutine(Restart(1));
+            Health -= dame;
+            immortalTime = Time.time + ImortalDuration;
+            animator.SetTrigger("Hit");
+            HitSound.Play();
+            if (Health <= 0)
+            {
+                GetComponent<PlayerController>().enabled = false;
+                enabled = false;
+                animator.SetBool("Dead", true);
+                DieSound.Play();
+                StartCoroutine(Restart(1));
+            }
         }
     }
 
