@@ -6,6 +6,8 @@ public class BossController : MonoBehaviour
 {
     // Start is called before the first frame update
     public float Speed = 5;
+    public float DashSpeed = 10;
+    public float DashCoolDown = 2;
     private bool isFacingRight = true;
     private GameObject player;
     void Start()

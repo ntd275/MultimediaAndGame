@@ -7425,6 +7425,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
+  DashSpeed: 40
+  DashCoolDown: 2
 --- !u!114 &1684842869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7437,7 +7439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f319bb1ce926cb48962e254388347aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  Health: 20
   animator: {fileID: 0}
   cc: {fileID: 0}
   rb: {fileID: 0}
@@ -7449,6 +7451,8 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 128
+  MaxHealth: 0
+  Imutable: 0
 --- !u!114 &1684842870
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,11 +15,14 @@ public class BossCombat : MonoBehaviour
     public Transform AttackPoint4;
     public float AttackRange = 2;
     public LayerMask PlayerLayer;
+    public int MaxHealth;
+    public bool Imutable = false;
     void Start()
     {
         animator = GetComponent<Animator>();
         cc = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        MaxHealth = Health;
     }
 
     // Update is called once per frame
@@ -30,13 +33,16 @@ public class BossCombat : MonoBehaviour
 
     public void TakeDame(int dame)
     {
-        Health -= dame;
-        if(Health <= 0)
+        if (!Imutable)
         {
-            cc.enabled = false;
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            animator.Play("Death");
-            GetComponent<BossController>().enabled = false;
+            Health -= dame;
+            if (Health <= 0)
+            {
+                cc.enabled = false;
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                animator.Play("Death");
+                GetComponent<BossController>().enabled = false;
+            }
         }
     }
 
@@ -74,6 +80,26 @@ public class BossCombat : MonoBehaviour
         }
 
         hitPlayers = Physics2D.OverlapCircleAll(AttackPoint4.position, AttackRange * 0.5f, PlayerLayer);
+        foreach (var enemy in hitPlayers)
+        {
+            enemy.GetComponent<PlayerCombat>().TakeDame(1);
+        }
+    }
+
+    public void Attack3()
+    {
+        var hitPlayers = Physics2D.OverlapCircleAll(AttackPoint.position, AttackRange * 1.25f, PlayerLayer);
+        foreach (var enemy in hitPlayers)
+        {
+            enemy.GetComponent<PlayerCombat>().TakeDame(1);
+        }
+        hitPlayers = Physics2D.OverlapCircleAll(AttackPoint2.position, AttackRange * 0.75f, PlayerLayer);
+        foreach (var enemy in hitPlayers)
+        {
+            enemy.GetComponent<PlayerCombat>().TakeDame(1);
+        }
+
+        hitPlayers = Physics2D.OverlapCircleAll(AttackPoint4.position, AttackRange * 0.25f, PlayerLayer);
         foreach (var enemy in hitPlayers)
         {
             enemy.GetComponent<PlayerCombat>().TakeDame(1);
