@@ -15,6 +15,8 @@ public class FinishLv : MonoBehaviour
             FinishSound.Play();
             PlayerPrefs.SetString("Level", "");
             collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            PlayerPrefs.SetInt("Coin", GameObject.Find("CoinUI").GetComponent<CoinUI>().total);
+            PlayerPrefs.SetInt("Health", collision.gameObject.GetComponent<PlayerCombat>().Health);
             StartCoroutine(NextScene(1));
         }
     }
