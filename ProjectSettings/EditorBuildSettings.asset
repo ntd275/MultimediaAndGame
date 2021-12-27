@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/BossBattle.unity
     guid: 65e78352fffd45a40a75b0bca8d3f057
   - enabled: 1
+    path: Assets/Scenes/YouWin.unity
+    guid: f5741a235eed8664cb4dc41cd6a3e619
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 802774bec49bac74aa4b474c36b10aff
+  - enabled: 1
     path: Assets/Scenes/Level7.unity
     guid: 224f2818de57a934d8905f052bdf2ce5
   - enabled: 1

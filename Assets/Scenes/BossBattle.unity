@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FinishSound: {fileID: 658663940}
-  NextLv: Lobby
+  NextLv: YouWin
 --- !u!82 &658663940
 AudioSource:
   m_ObjectHideFlags: 0

@@ -110,6 +110,6 @@ public class PlayerCombat : MonoBehaviour
     IEnumerator Restart(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("GameOver");
     }
 }

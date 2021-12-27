@@ -13,7 +13,12 @@ public class FinishLv : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             FinishSound.Play();
-            PlayerPrefs.SetString("Level", "");
+            if (NextLv.Contains("Level") || NextLv.Contains("Boss")) 
+            { 
+                PlayerPrefs.SetString("Level", NextLv); 
+            } else { 
+                PlayerPrefs.SetString("Level", ""); 
+            }
             collision.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             PlayerPrefs.SetInt("Coin", GameObject.Find("CoinUI").GetComponent<CoinUI>().total);
             PlayerPrefs.SetInt("Health", collision.gameObject.GetComponent<PlayerCombat>().Health);
